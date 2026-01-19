@@ -1,0 +1,13 @@
+{
+  "name": "lwaaron2023",
+  "version": "1.0.0",
+  "description": "basic web application for portfolio",
+  "author": "Aaron Waller",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "mime": "^4.1.0"
+  }
+}
