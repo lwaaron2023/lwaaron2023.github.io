@@ -33,3 +33,7 @@ span{
 #command-hidden{
     display:none;
 }
+
+#baseCommand{
+    white-space: nowrap
+}
