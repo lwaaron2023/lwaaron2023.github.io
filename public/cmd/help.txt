@@ -1,0 +1,7 @@
+List of Commands:
+
+help: shows the list of commands and their functions
+
+about: retrieves the about me section and displays it on the console
+
+projects: retrieves information about recent projects that have been undertaken

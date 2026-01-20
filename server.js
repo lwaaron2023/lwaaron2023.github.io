@@ -1,46 +1,31 @@
 import http from 'http'
 import fs from 'fs'
-import mime from 'mime'
+import express from 'express'
+import bodyParser from 'body-parser'
+import path from 'path'
+
+const commandDirectory = path.join(process.cwd(),'/public/cmd/')
 const port =  process.env.PORT || 3000
+const app = express()
+const extension = "txt"
 
-const server = http.createServer( function( request,response ) {
-    let file = request.url;
-    if(file === '/'){
-        //Handles special case of base url
-        file = 'index.html';
-    }
-    sendFile(response, file);
-})
+app.use(express.static('public'))
+app.use(bodyParser.text())
 
-server.listen( port )
-
-const sendFile = ( response, filename ) => {
-    const type = mime.getType( filename )
-
-    fs.readFile( './public/'+filename, function( err, content ) {
-        // if the error = null, then we"ve loaded the file successfully
-        if( err === null ) {
-
-            // status code: https://httpstatuses.com
-            response.writeHeader( 200, { "Content-Type": type })
-            response.end( content )
-
-        }else{
-
-            // file not found, error code 404
-            response.writeHeader( 404 )
-            response.end( "404 Error: File Not Found" )
-
+app.post('/command', (req, res) => {
+    const command = req.body.toLocaleString()
+    //For now treats commands as txt files to be read
+    fs.readFile(path.join(commandDirectory, `${command}.${extension}`), (err, data) => {
+        if (err) {
+            res.send(`'${command}' is not recognized as an internal command, operable program, or batch file`)
+        }
+        else{
+            res.send(data)
         }
     })
 
+})
 
-}
+const server = http.createServer(app)
 
-// if(command in commands){
-//     const result = commands[command]()
-//     return result
-// }
-// else{
-//     return `Command '${command}' is not a recognized command. Use command 'help' for a list of recognized commands`
-// }
+server.listen(port)
