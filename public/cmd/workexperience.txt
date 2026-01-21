@@ -1,0 +1,14 @@
+Avencell Therapeutics, Technician
+Summer of 2025
+As part of my work I:
+1. Contributed to documentation framework and centralization
+2. Centralized and analyzed data pertaining to user groups, enterprise applications, and device policies leading to simplification of IT policy and 10-50% removal of unused device policy
+3. Tested for vulnerabilities related to conditional and network access policies
+4. Used Sophos and Sophos API in conjunction with the CVE database to improve threat hunting capabilities and identify 10+ vulnerabilities relating to deployed software
+
+MyIT Computer Services, Technician                                               Summers of 2022-2025
+As part of my work I:
+1. Replaced EOL hardware by cloning hard drives, as well as migrated both systems and users in ~1 day
+2. Troubleshot 3+ client issues involving commonly used applications
+3. Worked with 20+ clients to maximize uptime of their respective software ecosystems
+
