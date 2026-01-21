@@ -4,10 +4,15 @@ import express from 'express'
 import bodyParser from 'body-parser'
 import path from 'path'
 
+
 const commandDirectory = path.join(process.cwd(),'/public/cmd/')
 const port =  process.env.PORT || 3000
 const app = express()
 const extension = "txt"
+
+app.set('view engine', 'pug');
+app.set('views', './views');
+
 
 app.use(express.static('public'))
 app.use(bodyParser.text())
@@ -28,4 +33,12 @@ app.post('/command', (req, res) => {
 
 const server = http.createServer(app)
 
-server.listen(port)
+app.get('/', (req, res) => {
+    res.render('index.pug', {title:'Portfolio'})
+})
+
+server.listen(port, (err)=>{
+    if (err) {
+        console.log(err)
+    }
+})

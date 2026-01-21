@@ -200,7 +200,7 @@ window.onload = () => {
             interpretCommand(command).then((response) => {
                 response.text().then(
                     (text) => {
-                        past.innerText += "\n" + text + "\n"
+                        past.innerText += "\n" + text + "\n\n"
                     }
                 )
             })

@@ -10,6 +10,7 @@
   "dependencies": {
     "body-parser": "^2.2.2",
     "express": "^5.2.1",
-    "mime": "^4.1.0"
+    "mime": "^4.1.0",
+    "pug": "^3.0.3"
   }
 }
