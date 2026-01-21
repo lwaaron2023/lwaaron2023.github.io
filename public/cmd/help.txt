@@ -5,3 +5,7 @@ help: shows the list of commands and their functions
 about: retrieves the about me section and displays it on the console
 
 projects: retrieves information about recent projects that have been undertaken
+
+workexperience: retrieves information about relevant past work experience
+
+clear: clears the current terminal window of commands

@@ -1,0 +1,47 @@
+Software Engineering Final Project, WPI:
+
+1. Worked on a 10-person team using agile development methodologies and the PERN stack
+2. Was accountable for (including but not limited to):
+a.	Writing database endpoints (middleware) for the express server, Prisma Schema, and global datatypes
+b.	Developing a csv writer and reader to create and read in database backups
+c.	Creating components and displays in the front end to fetch and present analytics to the user
+d.	Applying DFS and Dijkstra’s algorithms for path finding
+e.	Designing graph and node interfaces used in pathfinding following the component design pattern
+f.	Implementing TF-IDF and stemming algorithms to create a virtual helper
+•	Our team successfully delivered the requested application at the end of the eight-week term.
+
+github link: unavailable due to terms of project
+
+
+Webware Final Project, WPI:
+
+1. Worked in a small team to create a website to host simple games
+
+2. Was responsible for:
+
+a. Creating the battleship game
+
+b. Creating the server.js file
+
+c. Building and deploying the project to Render
+
+d. Creating the routing within the web application that allowed for users to play the different games from the website.
+
+e. Styling the webpage that contained all the games.
+
+f. Creating the individual pages for the different games so that the games were iframes inside the container websote.
+
+github link: https://github.com/lwaaron2023/Group20-final-project-a25.git
+
+
+Machine Learning Final Project, WPI
+
+1. Scraped 10 years of stock data from Yahoo Finance
+
+2. Implemented a sliding window algorithm to annotate the data, then split the data into training and testing data
+
+3. Used PyTorch and Tensorflow to create a GRU model with Adam optimization to predict the adjusted closing price for the stock for the next 7 trading days, given the last 30 trading days
+
+4. Fined tuned hyperparameters to optimize the model
+
+5. Was 10-100 times more accurate in predictions than the baseline model created by copilot

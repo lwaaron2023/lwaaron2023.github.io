@@ -177,8 +177,11 @@ window.onload = () => {
         const past = document.getElementById("pastInput")
         if(past){
             addCommand(command)
-            if(command!=="") {
+            if(command!=="" && command!=="clear") {
                 queryServer(command)
+            }
+            else if(command==="clear"){
+                past.innerText = ""
             }
         }
     }
