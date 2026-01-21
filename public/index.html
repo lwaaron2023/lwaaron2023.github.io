@@ -7,6 +7,12 @@
     <script src="index.js"></script>
 </head>
 <body class="main">
+    <div class="hidden" id="history" data-items='{
+        "index":0,
+        "commands": [""]
+    }'>
+
+    </div>
     <p>
         <strong>Aaron Waller's Portfolio</strong><br>
         Copyright (C) Aaron Waller. All rights reserved.<br>
@@ -18,7 +24,7 @@
 
     </p>
     <div id="input">
-        <span id="baseCommand">PS C:\Users\portfolio></span><span id="command-before"></span><span id="command-hidden"></span><span id="cursor"></span><span id="command-after"></span>
+        <span id="baseCommand">PS C:\Users\portfolio></span><span id="command-before"></span><span id="command-hidden" class="hidden"></span><span id="cursor"></span><span id="command-after"></span>
     </div>
 </body>
 
