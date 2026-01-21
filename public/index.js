@@ -16,6 +16,7 @@ window.onload = () => {
     }
 
     const keyDown = (e) => {
+
         const commandBefore = document.getElementById("command-before")
         const commandHidden = document.getElementById("command-hidden")
         const commandAfter = document.getElementById("command-after")
@@ -25,8 +26,15 @@ window.onload = () => {
             }
             else {
                 if (e.key === "Enter") {
+                    //Queries server for result of command
+                    window.removeEventListener("keydown", keyDown)
                     handleEnter(commandBefore.innerText+commandHidden.innerText+commandAfter.innerText)
+                    commandBefore.innerText = ""
+                    commandHidden.innerText = ""
+                    commandAfter.innerText = ""
+                    window.addEventListener("keydown", keyDown)
                 } else if (e.key === "Backspace") {
+                    //Deletes character before cursor in command
                     if(commandBefore.innerText.length > 0){
                         commandBefore.innerText = commandBefore.innerText.substring(0, commandBefore.innerText.length-1)
                     }
@@ -65,7 +73,14 @@ window.onload = () => {
                         commandHidden.innerText = ""
                     }
                 }
+                //Goes backwards one command
+                else if(e.key === "ArrowUp"){
 
+                }
+                //Goes forward one command
+                else if(e.key === "ArrowDown"){
+
+                }
             }
         }
 
@@ -76,19 +91,33 @@ window.onload = () => {
 
     const handleEnter = (command) => {
         const past = document.getElementById("pastInput")
-        const current = document.getElementById("currentInput")
-        if(past && current){
 
+        if(past){
+            addCommand(command)
             if(command!=="") {
-                interpretCommand(command).then((response) => {
-                    response.text().then(
-                        (text) => {
-                            command = ""
-                            past.innerText += text + "\n"
-                        }
-                    )
-                })
+                queryServer(command)
             }
+        }
+    }
+
+    const addCommand = (command) => {
+        const past = document.getElementById("pastInput")
+        const base = document.getElementById("baseCommand")
+        if(past && base){
+            past.innerText += base.innerText + command + "\n"
+        }
+    }
+
+    const queryServer = (command) => {
+        const past = document.getElementById("pastInput")
+        if(past) {
+            interpretCommand(command).then((response) => {
+                response.text().then(
+                    (text) => {
+                        past.innerText += "\n" + text + "\n"
+                    }
+                )
+            })
         }
     }
 
